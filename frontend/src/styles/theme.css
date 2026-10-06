@@ -1,0 +1,146 @@
+/**
+ * EcoSort AI - Design Tokens & Central Theme System (Stage 6).
+ *
+ * PALETTE SYSTEM:
+ * - Brand Color: Permanent EcoSort Green (#10b981) in both modes.
+ * - Dark Mode: Black + Charcoal + White Text + Eco Green Accent.
+ * - Light Mode: Clean White + Subtle Gray + Dark Text + Eco Green Accent.
+ */
+
+:root {
+  /* Permanent Brand Colors */
+  --brand-green: #10b981;
+  --brand-green-hover: #059669;
+  --brand-green-light: #34d399;
+  --brand-green-dark: #047857;
+  --brand-green-muted: rgba(16, 185, 129, 0.12);
+  --brand-green-glow: rgba(16, 185, 129, 0.25);
+  --brand-green-border: rgba(16, 185, 129, 0.28);
+
+  /* Category Palette */
+  --cat-plastic: #3b82f6;
+  --cat-paper: #f59e0b;
+  --cat-glass: #10b981;
+  --cat-metal: #94a3b8;
+  --cat-organic: #ea580c;
+  --cat-ewaste: #8b5cf6;
+
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-danger: #ef4444;
+  --status-info: #3b82f6;
+
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Transitions & Radii */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+ * DARK THEME (Refined for EcoSort AI)
+ * Near-black background, dark charcoal cards, emerald green glow accents
+ * -------------------------------------------------------------------------- */
+[data-theme='dark'] {
+  --bg-primary: #0a0e0c;
+  --bg-surface: #121815;
+  --bg-surface-secondary: #17201c;
+  --bg-surface-hover: #1c2722;
+  --bg-surface-active: #23322b;
+  --bg-elevated: #1a231f;
+  --bg-input: #0e1311;
+
+  --hero-gradient: linear-gradient(135deg, #0d2218 0%, #112d20 50%, #0d1e16 100%);
+  --hero-border: rgba(34, 197, 94, 0.2);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(34, 197, 94, 0.14);
+  --border-hover: rgba(34, 197, 94, 0.35);
+  --border-active: var(--brand-green);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 0 24px rgba(16, 185, 129, 0.22);
+
+  --badge-bg: rgba(255, 255, 255, 0.05);
+  --header-bg: rgba(10, 14, 12, 0.85);
+  --sidebar-tip-bg: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(16, 185, 129, 0.04) 100%);
+}
+
+/* --------------------------------------------------------------------------
+ * LIGHT THEME (Fresh, crisp, natural, eco-friendly)
+ * Soft mint-white background, clean white cards, subtle green tints
+ * -------------------------------------------------------------------------- */
+[data-theme='light'] {
+  --bg-primary: #f6faf7;
+  --bg-surface: #ffffff;
+  --bg-surface-secondary: #f0fdf4;
+  --bg-surface-hover: #e6f7ec;
+  --bg-surface-active: #dcfce7;
+  --bg-elevated: #ffffff;
+  --bg-input: #f8fafc;
+
+  --hero-gradient: linear-gradient(135deg, #f0fdf4 0%, #e6f7ec 50%, #f7fdf9 100%);
+  --hero-border: rgba(16, 185, 129, 0.24);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #8392a5;
+
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-default: rgba(16, 185, 129, 0.16);
+  --border-hover: rgba(16, 185, 129, 0.4);
+  --border-active: var(--brand-green);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 14px rgba(16, 185, 129, 0.08);
+  --shadow-lg: 0 12px 28px rgba(16, 185, 129, 0.1);
+  --shadow-accent: 0 0 20px rgba(16, 185, 129, 0.18);
+
+  --badge-bg: rgba(15, 23, 42, 0.04);
+  --header-bg: rgba(246, 250, 247, 0.88);
+  --sidebar-tip-bg: linear-gradient(135deg, #f0fdf4 0%, #e6f7ec 100%);
+}
+
+/* Global resets & typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea {
+  font-family: inherit;
+}
